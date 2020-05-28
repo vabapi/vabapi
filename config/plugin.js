@@ -6,4 +6,12 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
+  mongo: {
+    enable: true,
+    package: 'egg-mongo-native',
+  },
+  jwt: {
+    enable: true,
+    package: 'egg-easy-jwt',
+  },
 };

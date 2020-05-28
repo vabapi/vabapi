@@ -18,11 +18,19 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+  config.vabapi = {
+    // accessToken有效期,单位秒
+    expirationPeriod: 3600,
+  };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
   };
-
   return {
     ...config,
     ...userConfig,
