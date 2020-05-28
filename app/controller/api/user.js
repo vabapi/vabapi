@@ -37,7 +37,7 @@ class UserController extends Controller {
       return false;
     }
     const vabapidb = app.mongo.get('vabapi');
-    const userinfo = await vabapidb.findOne('user', { query: ctx.request.body });
+    const userinfo = await vabapidb.findOne('users', { query: ctx.request.body });
     if (userinfo) {
       body.data.accessToken = await ctx.helper.creataccessToken(userinfo);
     } else {
