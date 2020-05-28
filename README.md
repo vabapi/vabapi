@@ -1,6 +1,7 @@
 # vabapi
 
 文档慢慢写，别急
+配套的数据库环境部署请参考 [vabapidevmongo](https://gitee.com/vabapi/vabapidevmongo)
 
 ## QuickStart
 
