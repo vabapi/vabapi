@@ -1,7 +1,16 @@
 # vabapi
 
 文档慢慢写，别急
+
 配套的数据库环境部署请参考 [vabapidevmongo](https://gitee.com/vabapi/vabapidevmongo)
+
+现在源码中已自带了一套开发用mongodb
+```
+// 创建并启动mongo数据库
+npm run mongoup
+// 关闭mongo数据库
+npm run mongodown
+```
 
 ## QuickStart
 

@@ -1,0 +1,26 @@
+# root/sOXPkHmK1iajNn9V 是默认的数据库管理员用户名/密码  root/root 是默认的mongo-express登录用户名/密码，可按需修改
+version: "3.1"
+services:
+  mongo:
+    build: ./mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo/db/:/data/db
+      - ./data/mongo/configdb/:/data/configdb
+    environment:
+      TZ: Asia/Shanghai
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: sOXPkHmK1iajNn9V
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      TZ: Asia/Shanghai
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: sOXPkHmK1iajNn9V
+      ME_CONFIG_BASICAUTH_USERNAME: root
+      ME_CONFIG_BASICAUTH_PASSWORD: root
