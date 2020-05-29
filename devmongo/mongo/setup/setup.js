@@ -13,5 +13,6 @@ const admin = {
   userName: 'admin',
   password: '123456',
   permissions: [ 'admin' ],
+  avatar:'http://127.0.0.1/public/head.jpeg'
 };
 db.users.insert([ admin ]);

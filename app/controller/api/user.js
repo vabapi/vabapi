@@ -14,6 +14,7 @@ class UserController extends Controller {
     if (userinfo) {
       body.data.permissions = userinfo.permissions;
       body.data.userName = userinfo.userName;
+      body.data.avatar = userinfo.avatar;
     } else {
       body.code = 402;
       body.msg = '登录失效，请重新登录';
