@@ -14,4 +14,8 @@ module.exports = {
     enable: true,
     package: 'egg-easy-jwt',
   },
+  cors: {
+    enable: true,
+    package: 'egg-cors',
+  },
 };

@@ -20,6 +20,9 @@ module.exports = appInfo => {
       },
     },
   };
+  config.security = {
+    domainWhiteList: [ '*' ],
+  };
 
   return config;
 };
