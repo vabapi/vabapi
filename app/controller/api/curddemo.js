@@ -146,7 +146,7 @@ class CurddemoController extends Controller {
       }
     } else { // 新增数据
       /* 这里是新增时不能重复字段的判定示例，多个字段复制多次，id列不需要判断
-      if (await ctx.helper.isRepeat(Collection, { permission: request.字段名, id: { $ne: request.id } }) > 0) {
+      if (await ctx.helper.isRepeat(Collection, { permission: request.字段名 }) > 0) {
         ctx.body = {
           code: 400,
           msg: '字段名已存在！',
