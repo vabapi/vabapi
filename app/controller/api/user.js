@@ -10,6 +10,13 @@ class UserController extends Controller {
       msg: 'success',
       data: { },
     };
+    if (!ctx.request.headers.accesstoken) {
+      ctx.body = {
+        code: 402,
+        msg: '未提供accessToken,请重新登录',
+      };
+      return;
+    }
     const userinfo = await ctx.helper.verifyaccessToken(ctx.request.headers.accesstoken);
     if (userinfo) {
       body.data.permissions = userinfo.permissions;

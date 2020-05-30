@@ -47,4 +47,17 @@ module.exports = {
     const userinfo = await this.ctx.jwt.decode(res.jwt);
     return userinfo;
   },
+  cloneObjectFn(obj) { // 对象复制
+    return JSON.parse(JSON.stringify(obj));
+  },
+  creatUUID() { // 生成UUID
+    const uuid = require('uuid');
+    const res = uuid.v1().toString().replace(/-/g, '');
+    return res;
+  },
+  async isRepeat(Collection, query) {
+    const vabapidb = this.app.mongo.get('vabapi');
+    const res = await vabapidb.countDocuments(Collection, { query });
+    return res;
+  },
 };
