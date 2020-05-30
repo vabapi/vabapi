@@ -39,7 +39,7 @@ class UserController extends Controller {
       },
     };
     if (!ctx.request.body.userName || !ctx.request.body.password) {
-      body.code = 403;
+      body.code = 400;
       body.msg = '用户名/密码缺失！';
       ctx.body = body;
       return false;
@@ -49,8 +49,8 @@ class UserController extends Controller {
     if (userinfo) {
       body.data.accessToken = await ctx.helper.creataccessToken(userinfo);
     } else {
-      body.code = 403;
-      body.msg = '用户名或密码错误';
+      body.code = 500;
+      body.msg = '帐户或密码不正确。';
       delete body.data;
     }
     ctx.body = body;
