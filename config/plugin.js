@@ -1,3 +1,5 @@
+/* eslint valid-jsdoc: "off" */
+
 'use strict';
 
 /** @type Egg.EggPlugin */
@@ -22,5 +24,8 @@ module.exports = {
     enable: true,
     package: 'egg-validate',
   },
-
+  io: {
+    enable: true,
+    package: 'egg-socket.io',
+  },
 };
